@@ -22,10 +22,11 @@ const authOptions = {
 
         // if email and password is there
         if (!credentials?.email || !credentials?.password) {
-          return null;
+          throw new Error("Missing Fields");
         }
 
         // check if user exists
+
         const user = await prisma.user.findUnique({
           where: {
             email: credentials.email,
@@ -34,7 +35,7 @@ const authOptions = {
 
         // if no user or no password (because different login provider)
         if (!user || !user?.password) {
-          return null;
+          throw new Error("User not registered");
         }
 
         // check if password matches
@@ -44,7 +45,7 @@ const authOptions = {
         );
 
         if (!isPasswordValid) {
-          return null;
+          throw new Error("Invalid username or password");
         }
 
         return {

@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <main className="my-24 text-center">
       <div className="w-full flex gap-2 justify-between items-center px-12">
-        <h1>🤍</h1>
+        <h1 className="cursor-pointer">🤍</h1>
 
         {
           !!session
