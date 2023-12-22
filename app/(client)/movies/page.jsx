@@ -1,5 +1,5 @@
 import getMovies from "@/utils/getMovies"
-import MovieList from "../movieList"
+import MovieList from "@/app/movieList"
 
 export const dynamic = "force-dynamic"
 
@@ -8,7 +8,7 @@ export default async function Movies() {
     return (
         <main className="my-24 text-center">
             <h1 className="text-2xl flex justify-center items-center">
-                Movies Fetched with
+                Movies Fetched without
                 <span className="inline-block bg-white/20 p-2 mx-2 rounded-md text-sm">
                     loading.jsx
                 </span>

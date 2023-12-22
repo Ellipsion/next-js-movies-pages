@@ -1,5 +1,5 @@
 import getMovies from "@/utils/getMovies"
-import MovieList from "../movieList"
+import MovieList from "@/app/movieList"
 
 export const dynamic = "force-dynamic"
 
