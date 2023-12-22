@@ -1,9 +1,24 @@
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { LoginButton, LogoutButton } from "@/components/Auth";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession();
   return (
     <main className="my-24 text-center">
-      <h1 className="text-2xl">Next 13 Pages example ✨</h1>
+      <div className="w-full flex gap-2 justify-between items-center px-12">
+        <h1>🤍</h1>
+
+        {
+          !!session
+            ?
+            <LogoutButton name={session?.user?.name} />
+            :
+            <LoginButton />
+        }
+
+      </div>
+      <h1 className="text-3xl font-semibold mt-12">Next 13 Pages example ✨</h1>
       <div className="flex gap-2 justify-center mt-12">
         <Link
           className=" inline-block py-3 px-6 rounded-md font-bold text-black bg-white"
