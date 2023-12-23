@@ -3,6 +3,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { compare } from "bcrypt";
 
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
 
 const authOptions = {
   adapter: PrismaAdapter(prisma),
@@ -58,6 +59,10 @@ const authOptions = {
   ],
   session: {
     strategy: "jwt",
+  },
+  pages: {
+    signIn: "/auth/login",
+    newUser: "/auth/new-user",
   },
 };
 
