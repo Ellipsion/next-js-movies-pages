@@ -1,6 +1,7 @@
 import Link from "next/link";
 import LoginForm from "./form";
-import { GoogleLogin } from "@/components/Auth";
+import { GithubLogin, GoogleLogin, OAuthError } from "@/components/Auth";
+
 
 export default function Example() {
     return (
@@ -8,13 +9,14 @@ export default function Example() {
             <div className="flex min-h-screen flex-1 flex-col justify-center px-6  py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm border border-gray-800 rounded-md p-8">
                     <div className="w-full flex flex-col gap-2 rounded-md text-white mb-8">
-                        <h2 className="text-3xl">✌</h2>
                         <h2 className=" text-left text-3xl font-bold leading-9 tracking-tight ">
-                            Welcome Back!
+                            Welcome Back! ✌
                         </h2>
                         <p className="text-xs font-semibold text-gray-300 w-4/5">Sign in to your account.</p>
                     </div>
+                    <OAuthError />
                     <GoogleLogin />
+                    <GithubLogin />
                     <div className="flex items-center mb-4 text-sm text-gray-600">
                         <hr className="flex-grow border-t border-gray-600" />
                         <span className="mx-2">Or use credentials</span>

@@ -13,7 +13,8 @@ To practice Layouts, Pages and Authentication.
 * [X] Credentials Provider
 * [ ] Protected Routes (Client and Server side)
 * [X] Google Provider
-* [ ] Github Provider
+* [X] Github Provider
+* [X] OAuth providers error handling
 * [ ] Authorization (user roles)
 
 # To Do
