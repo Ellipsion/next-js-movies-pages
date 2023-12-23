@@ -3,7 +3,7 @@ import LoginForm from "./form";
 import { GithubLogin, GoogleLogin, OAuthError } from "@/components/Auth";
 
 
-export default function Example() {
+export default function LoginPage() {
     return (
         <>
             <div className="flex min-h-screen flex-1 flex-col justify-center px-6  py-12 lg:px-8">

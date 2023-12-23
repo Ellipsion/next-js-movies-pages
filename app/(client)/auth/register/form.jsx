@@ -29,7 +29,8 @@ const RegisterForm = () => {
         axios.post("/api/register", data)
             .then(() => {
                 toast.success("Registered Successfully!")
-                signIn("credentials", { ...data, redirect: false })
+                // redirect to verify email
+                router.push("/auth/not-verified")
             })
             .catch((res) => setError(res?.response?.data?.error))
     }

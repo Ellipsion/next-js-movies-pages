@@ -58,6 +58,10 @@ const authOptions = {
           throw new Error("Invalid username or password");
         }
 
+        if (!user.verified) {
+          throw new Error("USER_NOT_VERIFIED");
+        }
+
         return {
           id: user.id,
           email: user.email,

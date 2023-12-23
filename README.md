@@ -18,9 +18,17 @@ To practice Layouts, Pages and Authentication.
 * [X] OAuth providers error handling
 * [ ] Authorization (user roles)
 * [ ] OTP Signin
-* [ ] Email Verification
+* [X] Email Verification
 
 # To Do
+
+#### Email Verification
+
+* [ ] create verification token
+* [ ] send test email
+* [ ] verification flow (resend button, what will trigger the mail, client side page)
+* [ ] activation logic
+* [ ] restrict non activated users
 
 #### Credentials Provider
 
@@ -30,6 +38,7 @@ To practice Layouts, Pages and Authentication.
 * [ ] Error handling
 * [ ] Form validation (client side)
 * [ ] custom session and token
+* [ ] Password reset
 
 #### App
 
