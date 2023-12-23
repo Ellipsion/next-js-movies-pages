@@ -9,10 +9,10 @@ To practice Layouts, Pages and Authentication.
 * [X] Setup Prisma Client
 * [X] Prisma `user` model
 * [X] Setup NextAuth
-* [ ] Prisma `account` model
+* [X] Prisma `account` model
 * [X] Credentials Provider
 * [ ] Protected Routes (Client and Server side)
-* [ ] Google Provider
+* [X] Google Provider
 * [ ] Github Provider
 * [ ] Authorization (user roles)
 

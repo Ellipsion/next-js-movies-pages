@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getServerSession } from "next-auth";
-import { LoginButton, LogoutButton } from "@/components/Auth";
+import { LoginButton, LogoutButton, User } from "@/components/Auth";
 
 export default async function Home() {
   const session = await getServerSession();
@@ -8,7 +8,6 @@ export default async function Home() {
     <main className="my-24 text-center">
       <div className="w-full flex gap-2 justify-between items-center px-12">
         <h1 className="cursor-pointer">🤍</h1>
-
         {
           !!session
             ?

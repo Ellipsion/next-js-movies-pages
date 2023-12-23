@@ -1,10 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
 import { toast } from "react-hot-toast";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
+    const { status } = useSession()
+    const router = useRouter()
+
+    useEffect(() => {
+        if (status === "authenticated") {
+            router.push("/")
+        }
+    }, [status])
+
+
     const [data, setData] = useState({
         email: "",
         password: ""
@@ -13,6 +25,7 @@ const LoginForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setError(null)
         const callback = await signIn("credentials", {
             ...data,
             redirect: false
@@ -23,7 +36,6 @@ const LoginForm = () => {
         }
 
         if (!callback.error && callback.ok) {
-            setError(null)
             toast.success("Logged in successfuly!")
         }
 

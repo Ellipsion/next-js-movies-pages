@@ -1,10 +1,21 @@
 "use client";
 
 import axios from "axios";
-import { useState } from "react";
-
-
+import { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
+import { signIn } from "next-auth/react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 const RegisterForm = () => {
+    const { status } = useSession()
+    const router = useRouter()
+
+    useEffect(() => {
+        if (status === "authenticated") {
+            router.push("/")
+        }
+    }, [status])
+
     const [data, setData] = useState({
         name: "",
         email: "",
@@ -14,8 +25,12 @@ const RegisterForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setError(null)
         axios.post("/api/register", data)
-            .then(() => alert("registered"))
+            .then(() => {
+                toast.success("Registered Successfully!")
+                signIn("credentials", { ...data, redirect: false })
+            })
             .catch((res) => setError(res?.response?.data?.error))
     }
 

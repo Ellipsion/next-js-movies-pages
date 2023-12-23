@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LoginForm from "./form";
+import { GoogleLogin } from "@/components/Auth";
 
 export default function Example() {
     return (
@@ -13,7 +14,12 @@ export default function Example() {
                         </h2>
                         <p className="text-xs font-semibold text-gray-300 w-4/5">Sign in to your account.</p>
                     </div>
-
+                    <GoogleLogin />
+                    <div className="flex items-center mb-4 text-sm text-gray-600">
+                        <hr className="flex-grow border-t border-gray-600" />
+                        <span className="mx-2">Or use credentials</span>
+                        <hr className="flex-grow border-t border-gray-600" />
+                    </div>
                     <LoginForm />
 
                     <p className="mt-10 text-center text-sm text-gray-500">
