@@ -12,10 +12,13 @@ To practice Layouts, Pages and Authentication.
 * [X] Prisma `account` model
 * [X] Credentials Provider
 * [ ] Protected Routes (Client and Server side)
+* [X] Protected Routes (Middleware)
 * [X] Google Provider
 * [X] Github Provider
 * [X] OAuth providers error handling
 * [ ] Authorization (user roles)
+* [ ] OTP Signin
+* [ ] Email Verification
 
 # To Do
 
@@ -27,3 +30,8 @@ To practice Layouts, Pages and Authentication.
 * [ ] Error handling
 * [ ] Form validation (client side)
 * [ ] custom session and token
+
+#### App
+
+* [ ] profile page
+* [ ] Emoji avatars
