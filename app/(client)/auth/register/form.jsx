@@ -3,7 +3,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 const RegisterForm = () => {
@@ -28,9 +27,10 @@ const RegisterForm = () => {
         setError(null)
         axios.post("/api/register", data)
             .then(() => {
-                toast.success("Registered Successfully!")
+                toast.success("Registered Successfully!");
                 // redirect to verify email
-                router.push("/auth/not-verified")
+                const { name, email } = data;
+                router.push(`/auth/not-verified?name=${name}&email=${email}`)
             })
             .catch((res) => setError(res?.response?.data?.error))
     }

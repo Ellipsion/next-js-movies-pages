@@ -3,10 +3,18 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 const senderName = process.env.SENDER_NAME;
 const senderAddress = process.env.SENDER_EMAIL;
+const serverURL = process.env.SERVER_URL || "http://localhost:3000";
 
-export default async function sendVerificationMail(name, email, token) {
+export async function sendVerificationMail(name, email, token) {
+  if (!process.env.RESEND_API_KEY) {
+    console.warn("No RESEND API KEY in the environment variables.");
+    return null;
+  }
   if (!senderName || !senderAddress) {
-    throw new Error("No email environment variables");
+    console.warn(
+      "No SENDER_NAME or SENDER_EMAIL in the environment variables."
+    );
+    return null;
   }
   try {
     const data = await resend.emails.send({
@@ -15,16 +23,15 @@ export default async function sendVerificationMail(name, email, token) {
       subject: "Next.js App Email Verification",
       react: EmailTemplate({ name, token }),
     });
-    console.log("Mail sent to", email);
     return data;
   } catch (error) {
-    return { error };
+    throw new Error(JSON.stringify(error));
   }
 }
 
 const EmailTemplate = ({ name, token }) => (
   <div>
     <h1>Welcome, {name}!</h1>
-    <a href={`http://localhost:3000/auth/verify/${token}`}>Verify email</a>
+    <a href={`${serverURL}/auth/verify/${token}`}>Verify email</a>
   </div>
 );

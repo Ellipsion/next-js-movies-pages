@@ -11,7 +11,7 @@ To practice Layouts, Pages and Authentication.
 * [X] Setup NextAuth
 * [X] Prisma `account` model
 * [X] Credentials Provider
-* [ ] Protected Routes (Client and Server side)
+* [X] Protected Routes (Client and Server side)
 * [X] Protected Routes (Middleware)
 * [X] Google Provider
 * [X] Github Provider
@@ -24,9 +24,10 @@ To practice Layouts, Pages and Authentication.
 
 #### Email Verification
 
-* [ ] create verification token
-* [ ] send test email
-* [ ] verification flow (resend button, what will trigger the mail, client side page)
+* [X] create verification token
+* [X] send test email
+* [X] email verification flow (what will trigger the mail, client side page)
+* [ ] resend button
 * [ ] activation logic
 * [ ] restrict non activated users
 

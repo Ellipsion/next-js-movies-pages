@@ -30,8 +30,10 @@ const LoginForm = () => {
             ...data,
             redirect: false
         })
-
-        if (callback.error || !callback.ok) {
+        console.log(callback)
+        if (callback.error && callback.error === "USER_NOT_VERIFIED") {
+            router.push(`/auth/not-verified?email=${data.email}`)
+        } else if (callback.error || !callback.ok) {
             setError(callback.error)
         }
 
