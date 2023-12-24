@@ -16,7 +16,7 @@ export default function Example() {
                         </h2>
                         <p className="text-sm font-semibold text-gray-500">{email}</p>
                         <p className="mt-3 text-md font-semibold text-gray-300">Please verify your email.</p>
-                        <p className="text-sm font-medium text-gray-400">We've just sent a verification email to your inbox. Click the link to complete the process.</p>
+                        <p className="text-sm font-medium text-gray-400">{"We've"} just sent a verification email to your inbox. Click the link to complete the process.</p>
                     </div>
 
                     {/* <div className="flex items-center mb-4 text-sm text-gray-600">
@@ -29,7 +29,7 @@ export default function Example() {
                             className="ml-2 text-sm font-medium leading-6 text-cyan-500 hover:text-cyan-400"
                             href="#"
                         >
-                            Didn't get the mail? Send it again
+                            {"Didn't"} get the mail? Send it again
                         </Link>
                     </div>
                 </div>

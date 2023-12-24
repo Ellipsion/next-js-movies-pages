@@ -12,7 +12,7 @@ export default function Example() {
                         </h2>
                         <p className="text-sm font-semibold text-gray-500">ashishskyblue@gmail.com</p>
                         <p className="mt-3 text-md font-semibold text-gray-300">Please verify your email.</p>
-                        <p className="text-sm font-medium text-gray-400">We've just sent a verification email to your inbox. Click the link to complete the process.</p>
+                        <p className="text-sm font-medium text-gray-400">{"We've"} just sent a verification email to your inbox. Click the link to complete the process.</p>
                     </div>
 
                     {/* <div className="flex items-center mb-4 text-sm text-gray-600">
