@@ -6,6 +6,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 import { sendVerificationMail } from "@/utils/mailer";
+import { createVerificationToken } from "@/utils/verification";
 
 const authOptions = {
   adapter: PrismaAdapter(prisma),
@@ -60,12 +61,8 @@ const authOptions = {
         }
 
         if (!user.verified) {
-          const verificationToken = await prisma.VerificationToken.create({
-            data: {
-              token: await hash(user.id, 10),
-              userId: user.id,
-            },
-          });
+          const verificationToken = await createVerificationToken(user.id);
+
           await sendVerificationMail(
             user.name,
             user.email,

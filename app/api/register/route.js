@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { hash } from "bcrypt";
 import { randomUUID } from "crypto";
 import { sendVerificationMail } from "@/utils/mailer";
+import { createVerificationToken } from "@/utils/verification";
 
 export async function POST(request) {
   const { name, email, password } = await request.json();
@@ -29,12 +30,7 @@ export async function POST(request) {
         password: hashedPassword,
       },
     });
-    const verificationToken = await prisma.VerificationToken.create({
-      data: {
-        token: await hash(user.id, 10),
-        userId: user.id,
-      },
-    });
+    const verificationToken = await createVerificationToken(user.id);
 
     await sendVerificationMail(name, email, verificationToken?.token);
 

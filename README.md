@@ -25,11 +25,12 @@ To practice Layouts, Pages and Authentication.
 #### Email Verification
 
 * [X] create verification token
+* [X] setup `VerificationToken` model
 * [X] send test email
 * [X] email verification flow (what will trigger the mail, client side page)
 * [ ] resend button
-* [ ] activation logic
-* [ ] restrict non activated users
+* [X] activation logic
+* [X] restrict non activated users
 
 #### Credentials Provider
 
