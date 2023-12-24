@@ -9,7 +9,7 @@ export default function LoginPage() {
             <div className="flex min-h-screen flex-1 flex-col justify-center px-6  py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm border border-gray-800 rounded-md p-8">
                     <div className="w-full flex flex-col gap-2 rounded-md text-white mb-8">
-                        <h2 className=" text-left text-3xl font-bold leading-9 tracking-tight ">
+                        <h2 className=" text-left text-2xl md:text-3xl font-bold leading-9 tracking-tight ">
                             Welcome Back! ✌
                         </h2>
                         <p className="text-xs font-semibold text-gray-300 w-4/5">Sign in to your account.</p>

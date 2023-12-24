@@ -6,7 +6,7 @@ export default async function Home() {
   const session = await getServerSession();
   return (
     <main className="my-24 text-center">
-      <div className="w-full flex gap-2 justify-between items-center px-12">
+      <div className="w-full flex gap-2 justify-between items-center px-5 md:px-12">
         <h1 className="cursor-pointer">🤍</h1>
         {
           !!session
@@ -17,8 +17,8 @@ export default async function Home() {
         }
 
       </div>
-      <h1 className="text-3xl font-semibold mt-12">Next 13 Pages example ✨</h1>
-      <div className="flex gap-2 justify-center mt-12">
+      <h1 className="text-2xl md:text-3xl font-semibold mt-12">Next 13 Pages example ✨</h1>
+      <div className="flex gap-2 mx-5 justify-center mt-12">
         <Link
           className=" inline-block py-3 px-6 rounded-md font-bold text-black bg-white"
           href="/movies"
@@ -32,7 +32,7 @@ export default async function Home() {
           Fetch movies with loading.jsx
         </Link>
       </div>
-      <div className="flex gap-2 justify-center">
+      <div className="flex gap-2 justify-center mx-5">
         <Link
           className="text-black my-2 inline-block py-3 px-6 rounded-md font-bold bg-gradient-to-tr from-orange-400 to-red-400"
           href="/movies-error"
