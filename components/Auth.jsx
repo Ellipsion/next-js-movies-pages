@@ -1,13 +1,14 @@
 "use client";
 
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 import { signIn, signOut, useSession } from "next-auth/react";
 
 export const LoginButton = () => {
+    const router = useRouter()
     return <button
         className="inline-block py-3 px-6 rounded-md font-bold text-2xl text-blue-200 bg-slate-800"
-        onClick={() => signIn()}>👻</button>
+        onClick={() => router.push("/auth/login")}>👻</button>
 }
 
 export const LogoutButton = ({ name }) => {

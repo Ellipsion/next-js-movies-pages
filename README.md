@@ -37,10 +37,16 @@ To practice Layouts, Pages and Authentication.
 * [X] Register form
 * [X] custom login form
 * [ ] Credentials provider options customization
-* [ ] Error handling
+* [X] Error handling
 * [ ] Form validation (client side)
 * [ ] custom session and token
 * [ ] Password reset
+
+#### Profile page
+
+* [ ] Manage OAuth accounts
+* [ ] Merge different providers for one account
+* [ ] Emoji Avatar
 
 #### App
 

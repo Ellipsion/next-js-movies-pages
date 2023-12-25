@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
 import { toast } from "react-hot-toast";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter, redirect } from "next/navigation";
 
 const LoginForm = () => {
     const { status } = useSession()
@@ -32,7 +32,7 @@ const LoginForm = () => {
         })
         console.log(callback)
         if (callback.error && callback.error === "USER_NOT_VERIFIED") {
-            router.push(`/auth/not-verified?email=${data.email}`)
+            redirect(`/auth/not-verified?email=${data.email}`)
         } else if (callback.error || !callback.ok) {
             setError(callback.error)
         }
